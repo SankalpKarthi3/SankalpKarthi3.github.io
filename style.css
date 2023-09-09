@@ -202,13 +202,29 @@ section{
     transition-property: clip-path;
 }
 
-@media (max-width: 2040px){
+@media (max-width: 1040px){
     header{
         padding: 12px 20px;
     }
     section{
         padding: 100px 20px;
     }
+
+    .home .content h1{
+        font-size: 3em;
+        font-weight: 675;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        line-height: 45px;
+        margin-bottom: 24px;
+    }
+    
+    .home .content h1 span{
+        font-size: 0.72em;
+        font-weight: 360;
+    
+    }
+
     .home .media-icons{
         right: 15px;
     }
@@ -244,7 +260,7 @@ section{
         width: 600px;
         max-width: 600px;
         margin: 20px;
-        padding: 40px;
+        padding: 25px;
         display: flex;
         flex-direction: column;
         align-items: center;
