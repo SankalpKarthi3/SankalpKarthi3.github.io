@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>videoslider</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand">Sankalp Karthi</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Explore</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video class="video-slide active" src="data/1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="data/2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="data/3.mp4" autoplay muted loop></video>
+      <!-- <video class="video-slide" src="data/4.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="data/5.mp4" autoplay muted loop></video> -->
+
+      <div class="content active">
+        <h1>Curious.<br><span>Researcher</span></h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor animi illum ducimus, laudantium aliquam dolorum similique veritatis impedit minus repellendus molestiae autem, laborum amet velit quis. Similique dolores blanditiis quam!</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Curious.<br><span>Explorer</span></h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor animi illum ducimus, laudantium aliquam dolorum similique veritatis impedit minus repellendus molestiae autem, laborum amet velit quis. Similique dolores blanditiis quam!</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Curious.<br><span>Human</span></h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor animi illum ducimus, laudantium aliquam dolorum similique veritatis impedit minus repellendus molestiae autem, laborum amet velit quis. Similique dolores blanditiis quam!</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="media-icons">
+        <a href="https://www.linkedin.com/in/sankalpkarthi/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/sankalpkarthi/"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/SankalpKarthi"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <!-- <div class="nav-btn"></div>
+        <div class="nav-btn"></div> -->
+      </div>
+    </section>
+    <script type="text/javascript">
+      //Javascript of Navigation Menu
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation= document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+
+      });
+      
+      //Javascript for video slider navigation
+      const btns = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".video-slide");
+      const contents = document.querySelectorAll(".content");
+
+      var sliderNav = function(manual){
+        btns.forEach((btn) => {
+          btn.classList.remove("active")
+        });
+
+        slides.forEach((slide) => {
+          slide.classList.remove("active")
+        });
+        
+        contents.forEach((content) => {
+          content.classList.remove("active")
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+      }
+
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          sliderNav(i);
+        });
+      });
+
+    </script>
+    <!-- <main></main>
+    <footer></footer> -->
+  </body>
+</html>
